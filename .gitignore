@@ -9,12 +9,6 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# Large files / datasets
-*.csv
-*.db
-*.sqlite3
-data/
-models/
 
 # Mac
 .DS_Store

@@ -1,0 +1,15 @@
+{
+  "architecture": "efficientnet_b0",
+  "img_size": [
+    224,
+    224
+  ],
+  "class_names": [
+    "NORMAL",
+    "PNEUMONIA"
+  ],
+  "test_metrics": {
+    "loss": 0.3199,
+    "compile_metrics": 0.8892
+  }
+}
