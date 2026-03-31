@@ -76,3 +76,7 @@
 
 2026-03-31 18:28:06 | INFO | train_pneumonia | Phase 1: Training classification head (base frozen)
 2026-03-31 18:35:07 | INFO | train_pneumonia | Phase 2: Fine-tuning from layer 100
+2026-03-31 18:56:58 | INFO | train_pneumonia | Test results: {'loss': 0.3199, 'compile_metrics': 0.8892}
+2026-03-31 18:56:58 | INFO | train_pneumonia | Model saved → models/pneumonia_model.keras
+2026-03-31 18:56:58 | INFO | train_pneumonia | Metadata saved → models/pneumonia_meta.json
+2026-03-31 18:56:58 | INFO | train_pneumonia | Pneumonia training complete.
