@@ -1,0 +1,59 @@
+project:
+  name: Medical Diagnosis Assistant
+  version: 2.0.0
+
+paths:
+  models_dir: models/
+  logs_dir: logs/
+  data_dir: data/
+
+diabetes:
+  dataset_path: data/diabetesdataset.csv
+  target_column: Outcome
+  test_size: 0.2
+  random_state: 42
+  features:
+    - Pregnancies
+    - Glucose
+    - BloodPressure
+    - SkinThickness
+    - Insulin
+    - BMI
+    - DiabetesPedigreeFunction
+    - Age
+  zero_impute_columns:        # columns where 0 is biologically invalid
+    - Glucose
+    - BloodPressure
+    - SkinThickness
+    - Insulin
+    - BMI
+  model:
+    type: random_forest        # logistic_regression | random_forest | xgboost
+    cv_folds: 5
+    random_forest:
+      n_estimators: 200
+      max_depth: 10
+      class_weight: balanced
+    logistic_regression:
+      C: 1.0
+      solver: liblinear
+      class_weight: balanced
+
+pneumonia:
+  dataset_path: data/chest_xray/
+  img_size: [224, 224]
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.0001
+  model:
+    architecture: efficientnet_b0   # efficientnet_b0 | resnet50 | custom_cnn
+    dropout_rate: 0.5
+    fine_tune_from_layer: 100
+  augmentation:
+    rotation_range: 15
+    width_shift_range: 0.1
+    height_shift_range: 0.1
+    shear_range: 0.1
+    zoom_range: 0.15
+    horizontal_flip: true
+    brightness_range: [0.8, 1.2]
